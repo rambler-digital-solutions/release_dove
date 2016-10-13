@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Oleg']
   spec.email         = ['o.afanasyev@rambler-co.ru']
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = 'https://gitlab.rambler.ru/o.afanasyev/release_notifier'
+  spec.summary       = %q{Simple widget which notifies about new releases of your applicaiton.}
+  spec.description   = %q{This is a backend part of easy-to-embed widget with pop up notifications about your application's new releases.}
+  spec.homepage      = 'https://gitlab.rambler.ru/release_notifier/backend'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   #   raise 'RubyGems 2.0 or newer is required to protect against public gem pushes.'
   # end
 
-  spec.files         = `git ls-files -z`.split('\x0').reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']

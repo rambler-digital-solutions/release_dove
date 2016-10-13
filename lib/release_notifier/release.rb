@@ -1,4 +1,4 @@
-class ReleaseNotifier::Changelog
+class ReleaseNotifier::Release
   attr_reader :id, :date, :header, :content
 
   CHANGELOG = './CHANGELOG.md'
@@ -6,17 +6,11 @@ class ReleaseNotifier::Changelog
   DATE = /\d{4}\-\d{2}\-\d{2}/
 
   class << self
-    @all = nil
-
     def all
-      return @all unless @all.blank?
+      return @all if @all
+
       @all = []
-
-      log_string = read_from_file
-
-      fetch_releases_from log_string do |id, content|
-        @all << new(id, content)
-      end
+      releases.each { |*args| @all << new(*args) }
 
       @all
     end
@@ -47,20 +41,24 @@ class ReleaseNotifier::Changelog
 
     private
 
-    def fetch_releases_from(log_string)
-      log_indices = log_string.enum_for(:scan, TAG).map { Regexp.last_match.begin(0) }
+    def releases
+      if block_given?
+        log_indices = changelog_content.enum_for(:scan, TAG).map { Regexp.last_match.begin(0) }
 
-      log_indices.each_with_index do |position, i|
-        next_position = log_indices[i + 1]
-        length = next_position ? next_position - position : log_string.length - position
-        id = log_indices.size - i
-        content = log_string[position, length]
+        log_indices.each_with_index do |position, i|
+          next_position = log_indices[i + 1]
+          length = next_position ? next_position - position : log_string.length - position
+          id = log_indices.size - i
+          content = log_string[position, length]
 
-        yield id, content
+          yield id, content
+        end
+      else
+        self.to_enum(:releases)
       end
     end
 
-    def read_from_file
+    def changelog_content
       file = File.open(CHANGELOG, 'rb', encoding: 'utf-8')
       content = file.read
       file.close

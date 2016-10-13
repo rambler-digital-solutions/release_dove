@@ -4,7 +4,7 @@ require 'release_notifier/changelog'
 module ReleaseNotifier
   class Application
     def self.call(env)
-      ['200', {}, ['Hello from release_notifier']]
+      ['200', { 'Content-Type' => 'application/json' }, [Changelog.all.to_json]]
     end
   end
 end

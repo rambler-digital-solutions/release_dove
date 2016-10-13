@@ -1,4 +1,4 @@
-class Changelog
+class ReleaseNotifier::Changelog
   attr_reader :id, :date, :header, :content
 
   # CHANGELOG = Rails.root.join 'CHANGELOG.md'

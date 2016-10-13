@@ -13,7 +13,7 @@ gem 'release_notifier'
 Then drop a line to `routes.rb` to specify where you want your colleciton of releases:
 
 ```ruby
-  mount ReleaseNotifier::Application => '/releases'
+mount ReleaseNotifier::Application => '/releases'
 ```
 
 And finally include front-end part:

@@ -4,22 +4,9 @@ Dead-simple widget allowing you to receive notifications about new releases of y
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
+Add this line to your application's 'Gemfile':
 ```ruby
 gem 'release_notifier'
-```
-
-Then drop a line to `routes.rb` to specify where you want your colleciton of releases:
-
-```ruby
-mount ReleaseNotifier::Application => '/releases'
-```
-
-And finally include front-end part:
-
-```javascript
-TODO: include npm package 'release_notifier'
 ```
 
 And then execute:
@@ -29,6 +16,16 @@ And then execute:
 Or install it yourself as:
 
     $ gem install release_notifier
+
+Then drop a line to `routes.rb` to specify where you want your colleciton of releases:
+```ruby
+mount ReleaseNotifier::Application => '/releases'
+```
+
+Finally, include the front-end part:
+```javascript
+TODO: include npm package 'release_notifier'
+```
 
 ## Usage
 

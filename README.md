@@ -1,8 +1,6 @@
-# ReleaseNotifier
+# Release Notifier
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/release_notifier`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Dead-simple widget allowing you to receive notifications about new releases of your application in a form of nice pop-up bar.
 
 ## Installation
 
@@ -10,6 +8,18 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'release_notifier'
+```
+
+Then drop a line to `routes.rb` to specify where you want your colleciton of releases:
+
+```ruby
+  mount ReleaseNotifier::Application => '/releases'
+```
+
+And finally include front-end part:
+
+```javascript
+TODO: include npm package 'release_notifier'
 ```
 
 And then execute:

@@ -1,7 +1,6 @@
 class ReleaseNotifier::Changelog
   attr_reader :id, :date, :header, :content
 
-  # CHANGELOG = Rails.root.join 'CHANGELOG.md'
   CHANGELOG = './CHANGELOG.md'
   TAG = /^##\s(?:\[Unreleased\]|\[\d+\.\d+\.\d+\]\s\-\s\d{4}\-\d{2}\-\d{2})$/i
   DATE = /\d{4}\-\d{2}\-\d{2}/

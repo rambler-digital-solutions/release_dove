@@ -1,5 +1,5 @@
 require 'release_notifier/version'
-require 'changelog'
+require 'release_notifier/changelog'
 
 module ReleaseNotifier
   class Appication

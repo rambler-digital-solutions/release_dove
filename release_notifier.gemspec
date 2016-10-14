@@ -1,4 +1,5 @@
 # coding: utf-8
+# frozen_string_literal: true
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'release_notifier/version'
@@ -9,8 +10,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Oleg']
   spec.email         = ['o.afanasyev@rambler-co.ru']
 
-  spec.summary       = %q{Simple widget which notifies about new releases of your applicaiton.}
-  spec.description   = %q{This is a backend part of easy-to-embed widget with pop up notifications about your application's new releases.}
+  spec.summary       = 'Simple widget to notify about new releases of your applicaiton.'
+  spec.description   = "This is a backend part of easy-to-embed widget with pop up \
+                        notifications about your application's new releases."
   spec.homepage      = 'https://gitlab.rambler.ru/release_notifier/backend'
   spec.license       = 'MIT'
 
@@ -22,7 +24,8 @@ Gem::Specification.new do |spec|
   #   raise 'RubyGems 2.0 or newer is required to protect against public gem pushes.'
   # end
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.files         = `git ls-files -z`.split("\x0")
+                                        .reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']

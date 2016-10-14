@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class ReleaseNotifier::Release
   attr_reader :id, :date, :header, :content
 
@@ -42,28 +43,27 @@ class ReleaseNotifier::Release
     private
 
     def releases
-      if block_given?
-        log_indices = changelog_content.enum_for(:scan, TAG).map { Regexp.last_match.begin(0) }
+      return to_enum(:releases) unless block_given?
 
-        log_indices.each_with_index do |position, i|
-          next_position = log_indices[i + 1]
-          length = next_position ? next_position - position : log_string.length - position
-          id = log_indices.size - i
-          content = log_string[position, length]
+      log_content, log_indices = read_from_file
 
-          yield id, content
-        end
-      else
-        self.to_enum(:releases)
+      log_indices.each_with_index do |position, i|
+        next_position = log_indices[i + 1]
+        length = next_position ? next_position - position : log_content.length - position
+        id = log_indices.size - i
+        content = log_content[position, length]
+
+        yield id, content
       end
     end
 
-    def changelog_content
+    def read_from_file
       file = File.open(CHANGELOG, 'rb', encoding: 'utf-8')
       content = file.read
+      indices = content.enum_for(:scan, TAG).map { Regexp.last_match.begin(0) }
       file.close
 
-      content
+      [content, indices]
     end
   end
 

@@ -1,0 +1,40 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - 'test/test_helper.rb'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+    - 'node_modules/**/*'
+
+Rails:
+  Enabled: true
+
+AlignParameters:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 100
+
+Metrics/MethodLength:
+  Max: 20
+
+Style/IndentHash:
+  EnforcedStyle: consistent
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/SpaceInsideHashLiteralBraces:
+  Enabled: true
+  Exclude:
+    - spec/**/*
+
+Style/BlockComments:
+  Enabled: false
+
+Documentation:
+  Enabled: false

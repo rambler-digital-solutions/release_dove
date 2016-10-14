@@ -1,5 +1,6 @@
 # Release Dove
 [![Build Status](https://travis-ci.org/gafrom/release_dove.svg)](https://travis-ci.org/gafrom/release_dove)
+[![Gem Version](https://badge.fury.io/rb/release_dove.svg)](https://badge.fury.io/rb/release_dove)
 
 Dead-simple widget allowing you to receive notifications about new releases of your application in a form of nice pop-up bar.
 

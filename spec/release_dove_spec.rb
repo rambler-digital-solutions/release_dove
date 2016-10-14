@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 require 'spec_helper'
 
-describe ReleaseNotifier do
+describe ReleaseDove do
   it 'has a version number' do
-    expect(ReleaseNotifier::VERSION).not_to be nil
+    expect(ReleaseDove::VERSION).not_to be nil
   end
 
   it 'does something useful' do

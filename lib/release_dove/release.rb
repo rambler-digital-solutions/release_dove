@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class ReleaseNotifier::Release
+class ReleaseDove::Release
   attr_reader :id, :date, :header, :content
 
   CHANGELOG = './CHANGELOG.md'
@@ -26,7 +26,9 @@ class ReleaseNotifier::Release
       all.last
     end
 
-    delegate :size, to: :all
+    def size
+      all.size
+    end
     alias count size
     alias length size
 

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
-require 'release_notifier/version'
-require 'release_notifier/release'
+require 'release_dove/version'
+require 'release_dove/release'
 
-module ReleaseNotifier
+module ReleaseDove
   class Application
     def self.call(*)
       ['200', { 'Content-Type' => 'application/json; charset=utf-8' }, [Release.all.to_json]]

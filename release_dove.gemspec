@@ -2,18 +2,18 @@
 # frozen_string_literal: true
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'release_notifier/version'
+require 'release_dove/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'release_notifier'
-  spec.version       = ReleaseNotifier::VERSION
+  spec.name          = 'release_dove'
+  spec.version       = ReleaseDove::VERSION
   spec.authors       = ['Oleg']
   spec.email         = ['o.afanasyev@rambler-co.ru']
 
   spec.summary       = 'Simple widget to notify about new releases of your applicaiton.'
-  spec.description   = "This is a backend part of easy-to-embed widget with pop up \
+  spec.description   = "This is a backend part of easy-to-embed widget with pop-up \
                         notifications about your application's new releases."
-  spec.homepage      = 'https://gitlab.rambler.ru/release_notifier/backend'
+  spec.homepage      = 'https://gitlab.rambler.ru/release_dove/backend'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

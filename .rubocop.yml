@@ -10,9 +10,6 @@ AllCops:
     - 'spec/rails_helper.rb'
     - 'node_modules/**/*'
 
-Rails:
-  Enabled: true
-
 AlignParameters:
   Enabled: false
 

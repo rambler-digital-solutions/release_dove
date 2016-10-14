@@ -4,7 +4,7 @@ Dead-simple widget allowing you to receive notifications about new releases of y
 
 ## Installation
 
-Add this line to your application's 'Gemfile':
+Add this line to your application's `Gemfile`:
 ```ruby
 gem 'release_dove'
 ```
@@ -29,18 +29,24 @@ TODO: include npm package 'release_dove'
 
 ## Usage
 
-TODO: Write usage instructions here
+When running without from-end part, `https://you_app.com/releases` will return a collection of releases in `JSON` format from your CHANGELOG.md file, providing the latter is maintained in a [conventional way](http://keepachangelog.com/en/0.3.0/).
 
-## Development
+## Release attributes
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Releases have the following attributes:
+| Attribute   |               Description               |                         Example                           |
+|:---------:  |:--------------------------------------: |:-------------------------------------------------------:  |
+| id          | number, starting from earliest release  | 5                                                         |
+| version     | version of release, if specified        | 1.2.3                                                     |
+| date        | release date                            | 2016-10-15                                                |
+| header      | content of release header tag           | [1.2.3] - 2016-10-15                                      |
+| content     | full content of release                 | ## [1.2.3] - 2016-10-15 ### Added - Basic functionality   |
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+TODO: Write usage instructions here with npm package included
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/release_dove.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/gafrom/release_dove.
 
 ## License
 

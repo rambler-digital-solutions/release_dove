@@ -24,14 +24,14 @@ Then drop a line to `routes.rb` to specify where you want your colleciton of rel
 mount ReleaseDove::Application => '/releases'
 ```
 
-Finally, include the front-end part:
+Finally, plug in the front-end:
 ```javascript
 TODO: include npm package 'release_dove'
 ```
 
 ## Usage
 
-When running without from-end part, _https://you_app.com/releases_ will return a collection of releases in `JSON` format from your `CHANGELOG.md` file, providing the latter is maintained in a [conventional way](http://keepachangelog.com/en/0.3.0/).
+When running without front-end, _https://you_app.com/releases_ will return a collection of releases in `JSON` format from your `CHANGELOG.md` file, providing the latter is maintained in a [conventional way](http://keepachangelog.com/en/0.3.0/).
 
 ## Release attributes
 

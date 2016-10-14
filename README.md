@@ -1,4 +1,4 @@
-# Release Notifier
+# Release Dove
 
 Dead-simple widget allowing you to receive notifications about new releases of your application in a form of nice pop-up bar.
 
@@ -6,7 +6,7 @@ Dead-simple widget allowing you to receive notifications about new releases of y
 
 Add this line to your application's 'Gemfile':
 ```ruby
-gem 'release_notifier'
+gem 'release_dove'
 ```
 
 And then execute:
@@ -15,16 +15,16 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install release_notifier
+    $ gem install release_dove
 
 Then drop a line to `routes.rb` to specify where you want your colleciton of releases:
 ```ruby
-mount ReleaseNotifier::Application => '/releases'
+mount ReleaseDove::Application => '/releases'
 ```
 
 Finally, include the front-end part:
 ```javascript
-TODO: include npm package 'release_notifier'
+TODO: include npm package 'release_dove'
 ```
 
 ## Usage
@@ -39,7 +39,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/release_notifier.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/release_dove.
 
 
 ## License

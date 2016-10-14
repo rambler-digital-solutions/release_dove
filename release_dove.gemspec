@@ -8,12 +8,12 @@ Gem::Specification.new do |spec|
   spec.name          = 'release_dove'
   spec.version       = ReleaseDove::VERSION
   spec.authors       = ['Oleg']
-  spec.email         = ['o.afanasyev@rambler-co.ru']
+  spec.email         = ['gafrom@gmail.com']
 
   spec.summary       = 'Simple widget to notify about new releases of your applicaiton.'
   spec.description   = "This is a backend part of easy-to-embed widget with pop-up \
                         notifications about your application's new releases."
-  spec.homepage      = 'https://gitlab.rambler.ru/release_dove/backend'
+  spec.homepage      = 'https://github.com/gafrom/release_dove'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

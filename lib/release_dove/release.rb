@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 class ReleaseDove::Release
-  attr_reader :id, :date, :header, :content
+  attr_reader :id, :date, :version, :header, :content
 
   CHANGELOG = './CHANGELOG.md'
-  TAG = /^##\s(?:\[Unreleased\]|\[\d+\.\d+\.\d+\]\s\-\s\d{4}\-\d{2}\-\d{2})$/i
+  TAG = /^.*(\[Unreleased\]|\[\d+\.\d+\.\d+\].*\d{4}\-\d{2}\-\d{2})$/i
   DATE = /\d{4}\-\d{2}\-\d{2}/
+  VERSION = /\[(\d+\.\d+\.\d+)\]/
 
   class << self
     def all
@@ -72,8 +73,13 @@ class ReleaseDove::Release
   def initialize(id, content)
     @id = id
     @content = content
-    @header = @content.slice TAG
-    @date = @header.slice(DATE)&.to_date
+    @header = @content.match(TAG)[1]
+    @version = @header.match(VERSION)[1]
+    @date = begin
+      Date.parse(@header.slice(DATE))
+    rescue ArgumentError
+      nil
+    end
   end
 
   def ==(other)

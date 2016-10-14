@@ -30,19 +30,19 @@ TODO: include npm package 'release_dove'
 
 ## Usage
 
-When running without from-end part, `https://you_app.com/releases` will return a collection of releases in `JSON` format from your CHANGELOG.md file, providing the latter is maintained in a [conventional way](http://keepachangelog.com/en/0.3.0/).
+When running without from-end part, _https://you_app.com/releases_ will return a collection of releases in `JSON` format from your `CHANGELOG.md` file, providing the latter is maintained in a [conventional way](http://keepachangelog.com/en/0.3.0/).
 
 ## Release attributes
 
 Releases have the following attributes:
 
-| Attribute   |               Description               |                         Example                           |
-|:---------:  |:--------------------------------------: |:-------------------------------------------------------:  |
-| id          | number, starting from earliest release  | 5                                                         |
-| version     | version of release, if specified        | 1.2.3                                                     |
-| date        | release date                            | 2016-10-15                                                |
-| header      | content of release header tag           | [1.2.3] - 2016-10-15                                      |
-| content     | full content of release                 | ## [1.2.3] - 2016-10-15 ### Added - Basic functionality   |
+| Attribute   | Description                             | Example                                                   |
+|-----------  |---------------------------------------- |---------------------------------------------------------  |
+| `id`        | number, starting from earliest release  | 5                                                         |
+| `version`   | version of release, if specified        | 1.2.3                                                     |
+| `date`      | release date                            | 2016-10-15                                                |
+| `header`    | content of release header tag           | [1.2.3] - 2016-10-15                                      |
+| `content`   | full content of release                 | ## [1.2.3] - 2016-10-15 ### Added - Basic functionality   |
 
 TODO: Write usage instructions here with npm package included
 

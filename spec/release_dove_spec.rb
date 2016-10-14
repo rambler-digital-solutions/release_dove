@@ -7,7 +7,6 @@ describe ReleaseDove do
   end
 
   it ' Release.size returns 1' do
-    STDOUT.puts ReleaseDove::Release.all.inspect
     expect(ReleaseDove::Release.size).to eq(1)
   end
 

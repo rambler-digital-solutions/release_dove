@@ -34,6 +34,7 @@ When running without from-end part, `https://you_app.com/releases` will return a
 ## Release attributes
 
 Releases have the following attributes:
+
 | Attribute   |               Description               |                         Example                           |
 |:---------:  |:--------------------------------------: |:-------------------------------------------------------:  |
 | id          | number, starting from earliest release  | 5                                                         |

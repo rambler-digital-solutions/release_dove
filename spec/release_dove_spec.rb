@@ -6,8 +6,8 @@ describe ReleaseDove do
     expect(ReleaseDove::VERSION).not_to be nil
   end
 
-  it ' Release.size returns 1' do
-    expect(ReleaseDove::Release.size).to eq(1)
+  it ' Release.size returns number of releases' do
+    expect(ReleaseDove::Release.size).to eq(2)
   end
 
   it ' Release.first.date returns the date of first release - 14th Oct of 2016' do

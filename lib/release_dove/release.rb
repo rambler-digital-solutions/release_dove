@@ -10,10 +10,6 @@ class ReleaseDove::Release
     @id = id
     @content = content
 
-    assign_other_attributes
-  end
-
-  def assign_other_attributes
     return unless TAG =~ content
 
     @version = $LAST_MATCH_INFO[:version]
@@ -62,6 +58,16 @@ class ReleaseDove::Release
 
     private
 
+    def read_from_file
+      file = File.open(CHANGELOG, 'rb', encoding: 'utf-8')
+      content = file.read
+      file.close
+
+      indices = content.enum_for(:scan, TAG).map { Regexp.last_match.begin(0) }
+
+      [content, indices]
+    end
+
     def releases
       return to_enum(:releases) unless block_given?
 
@@ -75,16 +81,6 @@ class ReleaseDove::Release
 
         yield id, content
       end
-    end
-
-    def read_from_file
-      file = File.open(CHANGELOG, 'rb', encoding: 'utf-8')
-      content = file.read
-      file.close
-
-      indices = content.enum_for(:scan, TAG).map { Regexp.last_match.begin(0) }
-
-      [content, indices]
     end
   end
 end

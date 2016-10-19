@@ -4,7 +4,7 @@ class ReleaseDove::Release
   attr_reader :id, :date, :version, :header, :content
 
   CHANGELOG = './CHANGELOG.md'
-  TAG = /^.*(?<header>\[Unreleased\]|\[(?<version>\d+\.\d+\.\d+)\].*(?<date>\d{4}\-\d{2}\-\d{2}))$/i
+  TAG = /^.*(?<header>\[(?<version>\d+\.\d+\.\d+)\].*(?<date>\d{4}\-\d{2}\-\d{2}))$/i
 
   def initialize(id, content)
     @id = id

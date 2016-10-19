@@ -1,5 +1,13 @@
 # Release Dove change log
 
+## [0.3.0] - 2016-10-19
+
+### Removed
+- Support for `[Unreleased]` and similar tags specifying no version
+
+### Changed
+- Refactor Release model a bit
+
 ## [0.2.0] - 2016-10-17
 
 ### Added

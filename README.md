@@ -1,5 +1,5 @@
 # Release Dove
-[![Build Status](https://travis-ci.org/gafrom/release_dove.svg)](https://travis-ci.org/gafrom/release_dove)
+[![Build Status](https://travis-ci.org/rambler-digital-solutions/release_dove.svg)](https://travis-ci.org/rambler-digital-solutions/release_dove)
 [![Gem Version](https://badge.fury.io/rb/release_dove.svg)](https://badge.fury.io/rb/release_dove)
 
 Dead-simple widget allowing you to receive notifications about new releases of your application in a form of nice pop-up bar.
@@ -11,13 +11,7 @@ Add this line to your application's `Gemfile`:
 gem 'release_dove'
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install release_dove
+Next, tell bundle to install it by executing `$ bundle` or install it yourself by running `$ gem install release_dove`.
 
 Then drop a line to `routes.rb` to specify where you want your colleciton of releases:
 ```ruby
@@ -49,7 +43,7 @@ TODO: Write usage instructions here with npm package included
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/gafrom/release_dove.
+Bug reports and pull requests are welcome on GitHub at https://github.com/rambler-digital-solutions/release_dove.
 
 ## License
 
